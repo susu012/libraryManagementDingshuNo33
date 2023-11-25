@@ -1,0 +1,28 @@
+# 数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=true
+    username: root
+    password: qwe12345
+  thymeleaf:
+    cache: false
+# MyBatis
+mybatis:
+  # 搜索指定包别名
+  type-aliases-package: com.jxut.dingshuNo33.pojo
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  # 热部署
+  devtools:
+    restart:
+      # 热部署开启
+      enabled: true
+server:
+  port: 8081
+
+#分页pageHelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
